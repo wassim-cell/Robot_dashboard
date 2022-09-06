@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("headerClient.ejs") %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Client Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Client Dashboard</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Info boxes -->
+       
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Temperature</h2>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-8">
+                   
+
+                    
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                            <div class="row">
+                                <div class="col-sm-6 text-left">
+                              
+                                <h2 class="card-title">Latest two hours</h2>
+                                </div>
+                                <div class="col-sm-6">
+                                <a href="/" style="text-decoration: none;color:white"></a>
+                                <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                                </div>
+                                </a>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="chart" style="height: 100%;">
+                            <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-4">
+                    <div id="myId1" style="font-size:40px;color:white;padding-left: 30px;padding-top: 15px;">
+                        <%= temp.temperature %> °C
+                      </div>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- ./card-body -->
+              
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Pressure</h2>
+  
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-8">
+                     
+  
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                              <div class="row">
+                                <div class="col-sm-6 text-left">
+                              
+                                  <h2 class="card-title">Pressure (Latest two hours)</h2>
+                                </div>
+                                <div class="col-sm-6">
+                                  <a href="/" style="text-decoration: none;color:white"></a>
+                                  <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                                  </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="chart5" style="height: 100%;">
+                              <canvas id="myChart5"></canvas>
+                            </div>
+                          </div>
+                        
+                      <!-- /.chart-responsive -->
+                    </div>
+                    <div class="col-lg-4">
+                        
+                         <div id="myId2" style="font-size:20px;color:white;padding-left: 30px;padding-top: 15px;">
+                            <%= temp.pression %> bar
+                          </div>
+                          <br>
+                          <div id="myImage" style="font-size:23px;color:white;padding-left: 217px;padding-top: 22px;">
+                            <%= temp.pression*10 %> m
+                          </div>
+                         
+                      </div>
+                   
+                    <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- ./card-body -->
+                
+                <!-- /.card-footer -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+        <!-- /.row -->
+
+        <!-- Main row -->
+       
+            <!-- /.card -->
+            <div class="row">
+              <div class="col-md-12">
+  <br><br>
+
+         
+
+           
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">ClientLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.2.0
+    </div>
+  </footer>
+</div>
+<!-- ./wrapper -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+
+var Data = JSON.parse(`<%- JSON.stringify(data) %>`);
+  var labelsData = [];
+  for(var i = 0; i < Data.length; i++){
+  labelsData.push(Data[i].temperature);
+  }
+
+
+const ctx = document.getElementById('myChart').getContext('2d');
+var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+  gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
+  gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
+  gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+  
+const myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+      labels: ['-15','-30', '-45', '-60', '-75', '-90', '-105','-120'],
+      datasets: [{
+          label: 'Temperature ',
+          data: labelsData ,
+          backgroundColor: gradientStroke ,
+          borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1 ,
+          pointHoverBackgroundColor: 'rgb(255, 99, 132)',
+          pointHoverBorderColor: 'rgb(255, 99, 132)' ,
+          
+         
+        
+         
+          
+      }]
+  },
+  options: {
+    hover: {
+    intersect: false 
+     } ,
+      scales: {
+          y: {
+              beginAtZero: true , 
+          }
+      }
+  }
+});
+</script>
+<script>
+  
+    var Data = JSON.parse(`<%- JSON.stringify(data) %>`);
+        var labelsData = [];
+        for(var i = 0; i < Data.length; i++){
+        labelsData.push(Data[i].pression);
+        }
+    
+    
+    const ctx6 = document.getElementById('myChart5').getContext('2d');
+    var gradientStroke = ctx6.createLinearGradient(0, 230, 0, 50);
+    
+      
+        
+    const myChart5 = new Chart(ctx6, {
+        type: 'line',
+        data: {
+            labels: ['-15','-30', '-45', '-60', '-75', '-90', '-105','-120'],
+            datasets: [{
+                label: 'Pressure',
+                data: labelsData ,
+                backgroundColor: gradientStroke ,
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1 ,
+                pointHoverBackgroundColor: 'rgb(255, 99, 132)',
+                pointHoverBorderColor: 'rgb(255, 99, 132)' ,
+                
+               
+              
+               
+                
+            }]
+        },
+        options: {
+          hover: {
+          intersect: false 
+           } ,
+            scales: {
+                y: {
+                    beginAtZero: true , 
+                }
+            }
+        }
+    });
+    </script>
+<%- include("footerClient.ejs") %>
+</body>
+</html>
+<style> 
+    #myId1 {
+          background-image: url("/img/gaugeEdit.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 282px;
+          width: 200px;
+        }
+
+    #myId2 {
+          background-image: url("/img/gauge333.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 180px;
+          width: 310px;
+        }
+
+  #myImage {
+        background-image: url("/img/prof.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 180px;
+        width: 310px;
+      }
+</style>

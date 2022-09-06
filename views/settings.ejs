@@ -1,0 +1,210 @@
+<%- include("headerClient.ejs") %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Client Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Client Dashboard</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Info boxes -->
+       
+     <form action="/settings" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-10">
+            <div class="myClass" >
+                <h4 class="pb-4 border-bottom" style="padding-left:15px;font-family: monospace;">Account settings</h4>
+                <div class="d-flex align-items-start py-3 border-bottom">
+                    <img src="/uploads/<%= dataUser.image %>"  width="200px" height="150px" style="padding-left: 10px;" alt="">
+                    <div class="pl-sm-4 pl-2" id="img-section">
+                        <b>Profile Photo</b>
+                        <p>Accepted file type .png. Less than 1MB</p>
+                        <input  type="file"  name="image" />
+                    </div>
+                </div>
+              
+                <div class="py-2">
+                    <div class="row py-2">
+                        <div class="col-md-6">
+                            <label for="firstname">First Name</label>
+                            <input type="text" name="firstName" class="form-control" value="<%= dataUser.firstName %>" >
+                        </div>
+                        <div class="col-md-6 pt-md-0 pt-3">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" name="lastName"  class="form-control" value="<%= dataUser.lastName %>" >
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-6">
+                            <label for="company">Company</label>
+                            <input type="text" name="company"  class="form-control" value="<%= dataUser.company %>" >
+                        </div>
+                        <div class="col-md-6 pt-md-0 pt-3">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel"  name="phoneNumber"  class="form-control" value="<%= dataUser.phoneNumber %>" >
+                        </div>
+                    </div>
+                    <input type="hidden" name="oldImage" value="<%= dataUser.image %>" />
+                    <div class="row py-2">
+                        <div class="col-md-6">
+                            <label for="country">Country</label>
+                            <select name="country" id="country" value="<%= dataUser.country %>" > 
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="usa">USA</option>
+                                <option value="uk">Germany</option>
+                                <option value="uae">UAE</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-md-6 pt-md-0 pt-3" id="lang">
+                            <label for="language">Language</label>
+                            <div class="arrow">
+                                <select name="language" id="language" value="<%= dataUser.language %>" >
+                                    <option value="english" >English</option>
+                                    <option value="english_us">Deutsch</option>
+                                    <option value="enguk">French</option>
+                                    <option value="arab">Arabic</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-3 pb-4 border-bottom">
+                        <button type="submit" class="btn btn-primary mr-3">Save Changes</button>
+                        
+                    </div>
+                    <div class="d-sm-flex align-items-center pt-3" id="deactivate">
+                        <div>
+                            <b>Deactivate your account</b>
+                            <p>Details about your company account and password</p>
+                        </div>
+                        <div class="ml-auto">
+                            <button class="btn danger">Deactivate</button>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </form>
+</div>
+       </div>
+    </section>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+ 
+}
+
+.myClass{
+   color : white ;
+   
+}
+
+
+
+h4{
+    letter-spacing: -1px;
+    font-weight: 400;
+}
+.img{
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+#img-section p,#deactivate p{
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+#img-section b,#img-section button,#deactivate b{
+    font-size: 14px; 
+}
+
+label{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-family: Arial ;
+    color: white;
+    padding-left: 3px;
+}
+
+.form-control{
+    border-radius: 10px;
+   
+}
+
+input[placeholder]{
+    font-weight: 500;
+    
+}
+.form-control:focus{
+    box-shadow: none;
+    border: 1.5px solid #0779e4;
+    
+}
+
+
+
+select{
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px 10px;
+    /* -webkit-appearance: none; */
+}
+
+select:focus{
+    outline: none;
+}
+.button{
+    background-color: #fff;
+    color: #0779e4;
+}
+.button:hover{
+    background-color: #0779e4;
+    color: #fff;
+}
+.btn-primary{
+    background-color: #0779e4;
+}
+.danger{
+    background-color: #fff;
+    color: #e20404;
+    border: 1px solid #ddd;
+}
+.danger:hover{
+    background-color: #e20404;
+    color: #fff;
+}
+@media(max-width:576px){
+    .wrapper{
+        padding: 25px 20px;
+    }
+    #deactivate{
+        line-height: 18px;
+    }
+}
+</style>
+<%- include("footerClient.ejs") %>
